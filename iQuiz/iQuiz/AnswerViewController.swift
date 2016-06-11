@@ -55,6 +55,9 @@ class AnswerViewController: UIViewController {
                 questionViewController.quizzes = self.quizzes
                 questionViewController.quiz = self.quiz
                 questionViewController.userAnswers = self.userAnswers
+        } else if (segue.identifier == "mainMenu") {
+            let viewController = segue.destinationViewController as! ViewController
+            viewController.quizzes = self.quizzes
         } else if (segue.identifier == "result") {
             let resultViewController = segue.destinationViewController as! ResultViewController
                 resultViewController.quizzes = self.quizzes

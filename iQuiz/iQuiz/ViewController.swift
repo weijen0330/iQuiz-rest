@@ -29,7 +29,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.quizTableView.delegate = self
         self.quizTableView.dataSource = self
         self.quizTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "quizCell")
-        self.parseJson(self.json)
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,14 +92,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.localStorage.setValue(self.json.rawString()!, forKey: "quizData")
                     self.parseJson(self.json)
                 }
+                /* the rest */
             case.Failure:
                 let failureAlertController: UIAlertController = UIAlertController(title: "Can't download quiz data", message: "Fetching quiz data from local storage", preferredStyle: .Alert)
                 let okAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { (_) in }
                 failureAlertController.addAction(okAction)
                 self.presentViewController(failureAlertController, animated: true, completion: nil)
                 //checking to see if NSDefaults have anything
-                if ((self.localStorage.valueForKey("quizData") as! String) != "") {
-                    self.json = JSON.parse(self.localStorage.valueForKey("quizData") as! String)
+                print((self.localStorage.valueForKey("quizData") as? String))
+                if ((self.localStorage.valueForKey("quizData") as? String) != nil) {
+                    self.json = JSON.parse((self.localStorage.valueForKey("quizData") as! String)
+                    )
                     self.parseJson(self.json)
                 } else {
                     self.presentedViewController!.dismissViewControllerAnimated(true, completion: {

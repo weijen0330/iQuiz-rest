@@ -85,6 +85,9 @@ class QuestionViewController: UIViewController {
             answerViewController.quizzes = self.quizzes;
             answerViewController.quiz = self.quiz;
             answerViewController.userAnswers = self.userAnswers;
+        } else if (segue.identifier == "mainMenu") {
+            let viewController = segue.destinationViewController as! ViewController
+            viewController.quizzes = self.quizzes
         }
     }
 }

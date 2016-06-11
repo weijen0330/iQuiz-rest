@@ -125,7 +125,7 @@
                                     <navigationItem title="Question" id="b2i-7T-gt7">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="yXJ-NZ-dQ4">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="8g0-zr-y6u"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="mainMenu" id="8g0-zr-y6u"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -188,7 +188,7 @@
                                     <navigationItem title="Answer" id="9Nu-5E-14p">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="WZ5-pD-ryQ">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="CBP-YD-bAd"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="mainMenu" id="CBP-YD-bAd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -326,6 +326,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hvL-sy-cYd"/>
-        <segue reference="8g0-zr-y6u"/>
+        <segue reference="CBP-YD-bAd"/>
     </inferredMetricsTieBreakers>
 </document>
